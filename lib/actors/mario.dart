@@ -63,15 +63,14 @@ class Mario extends SpriteAnimationGroupComponent<MarioAnimationState>
     jumpUpdate();
     marioAnimationUpdate();
   }
-
-  @override
-  bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    _hAxisInput = 0;
-    _hAxisInput += keysPressed.contains(LogicalKeyboardKey.arrowLeft) ? -1 : 0;
-    _hAxisInput += keysPressed.contains(LogicalKeyboardKey.arrowRight) ? 1 : 0;
-    _jumpInput = keysPressed.contains(LogicalKeyboardKey.arrowUp);
-    return super.onKeyEvent(event, keysPressed);
-  }
+@override
+bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+  _hAxisInput = 0;
+  _hAxisInput += keysPressed.contains(LogicalKeyboardKey.arrowLeft) ? -1 : 0;
+  _hAxisInput += keysPressed.contains(LogicalKeyboardKey.arrowRight) ? 1 : 0;
+  _jumpInput = keysPressed.contains(LogicalKeyboardKey.arrowUp);
+  return super.onKeyEvent(event, keysPressed);
+}
 
   void jumpUpdate() {
     if (_jumpInput && isOnGround) {

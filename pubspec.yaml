@@ -38,6 +38,7 @@ dependencies:
   flame_audio: ^2.1.8
   flame_tiled: ^1.18.4
   url_launcher: ^6.2.4
+  web: ^0.2.0
 
 dev_dependencies:
   flutter_test:
